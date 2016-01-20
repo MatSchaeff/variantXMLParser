@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="js/jquery-1.12.0.js"></script>
+<script src="js/stupidtable.min.js"></script>
+<script src="js/xml2json.min.js"></script>
+<script src="js/iframeResizer.contentWindow.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<title>Protein existence</title>
+<meta name="description" content="Protein existence by chromosome.">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<body>
+    <div class="header">
+        <h1>XML Parser <span id="header2">- Variant annotations</span></h1>
+    </div>
+    <div class="row" style="margin:0px;">
+        <div class="col-lg-10 col-md-12 col-lg-offset-1">
+            <div class="row">
+                <div id="formBlock" class="col-md-6 col-md-offset-3" style="margin-top:20px;">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+                            <div style="display:inline-block;width:10%;margin-right:20px;padding-bottom:5px;vertical-align:middle;">
+                                <img src="img/upload.ico" alt="upload" style="width:100%;">
+                            </div>
+                            <div style="display:inline-block;vertical-align:middle;">
+                                <form>
+                                    <div class="form-group" style="margin-bottom:5px;">
+                                        <label>Select a file :</label>
+                                        <input type="file" id="files" name="file">
+                                    </div>
+                                </form>
+                            </div>
+                            <button id="fileSubmitted" class="btn btn-success btn-lg pull-right" type="button" style="margin-top:5px;display:inline-block;">Submit</button>
+                            <div>
+                                <output id="list" style="margin-top:15px;display:none"></output>
+                                <div id="loadSuccessful">SUCESS !</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 toggleInit" style="margin-top:20px;">
+                    <div class="panel panel-default" style="text-align:center">
+                        <div id="pieChart" style="min-width: 250px; height: 250px; max-width: 300px; margin: 0 auto; display:inline-block;"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 toggleInit" style="margin-top:20px;">
+                    <div class="panel panel-default" style="text-align:center">
+                        <div id="pieChart2" style="min-width: 250px; height: 250px; max-width: 300px; margin: 0 auto; display:inline-block;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row toggleInit" style="margin-top:15px;">
+                <div class="col-md-9" style="">
+                    <div class="panel panel-default arrow_box" style="margin-bottom:0px;padding-right:20px;">
+                        <div id="staticHead">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-4">Variant</th>
+                                        <th class="col-xs-1">Evidences</th>
+                                        <th class="col-xs-1">VE</th>
+                                        <th class="col-xs-1">VA</th>
+                                        <th class="col-xs-1">VP</th>
+                                        <th class="col-xs-1">Severe</th>
+                                        <th class="col-xs-1">Moderate</th>
+                                        <th class="col-xs-1">Mild</th>
+                                        <th class="col-xs-1">Normal</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div id="table">
+                            <table id="variantTable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="col-xs-4" data-sort="string">Variant</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">Evidences</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">VE</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">VA</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">VP</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">Severe</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">Moderate</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">Mild</th>
+                                        <th class="col-xs-1" data-sort="int" data-sort-default="desc">Normal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail" style="text-align:center;height:340px;margin-bottom:0px;">
+                        <img src="img/csv-xxl.png" alt="csv" style="max-width:128px;padding-top:20px;">
+                        <div class="caption">
+                            <h3>Export in CSV</h3>
+                            <p>Get the data from the table</p>
+                            <p style="text-align:center;">
+                                <a href="#" class="btn btn-success btn-lg export" role="export" style="margin-top:20px;vertical-align:middle;"><img src="img/icon-download.png" alt="download" style="height:25px;margin-right:10px;float:left;">CSV</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/app.js"></script>

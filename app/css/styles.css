@@ -1,0 +1,156 @@
+body{
+    background-color: #F7F6F6;
+    width: 100%;
+}
+.header{
+    background-color: #149E4C;
+    border-bottom: 1px solid #0d6731;
+}
+.header h1{
+    margin:0px;
+    padding:5px;
+    color:white;
+    font-weight: 200;
+}
+#header2{
+    color:rgba(255, 255, 255,0.8);
+    font-weight: 100;
+}
+
+h1 {
+/*    font-family: Helvetica;*/
+    text-align: center;
+    font-weight:300;
+    margin: .5em 0;
+}
+#table{
+    height: 300px;
+    overflow: auto;
+    border-bottom: 1px solid #ddd;
+}
+/*
+#table thead{
+    width: 100%;
+    position:fixed;
+}
+*/
+#table th{
+    text-align: center;
+    display: hidden;
+}
+#table thead{
+    display: none;
+}
+#table td{
+    text-align: center;
+}
+#staticHead{
+    padding-right:15px;
+}
+#staticHead table{
+    margin-bottom: 0px;
+}
+#staticHead th{
+    text-align: center;
+}
+
+.table-fixed thead {
+  width: 97%;
+}
+.table-fixed tbody {
+  height: 230px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+#staticHead th{
+  cursor:pointer;
+}
+
+.arrow_box {
+	position: relative;
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-left-color: #fff;
+	border-width: 20px;
+	margin-top: -20px;
+}
+.arrow_box:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-left-color: #ddd;
+	border-width: 21px;
+	margin-top: -21px;
+}
+
+/*
+#progress_bar {
+    margin: 10px 0;
+    padding: 3px;
+    border: 1px solid #000;
+    font-size: 14px;
+    clear: both;
+    opacity: 0;
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+  }
+*/
+#loadSuccessful{
+/*
+    margin: 10px 0;
+    padding: 3px;
+    border: 1px solid #000;
+    font-size: 14px;
+    clear: both;
+*/
+    display: none;
+/*
+    -moz-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    -webkit-transition: opacity 1s linear;
+*/
+}
+#list img{
+    width:25px;
+    margin-right:5px;
+    float:left;
+}
+/*
+  #loadSuccessful.loading {
+    opacity: 1.0;
+  }
+*/
+/*
+  #progress_bar .percent {
+    background-color: #99ccff;
+    height: auto;
+    width: 0;
+  }*/
+.toggleInit{
+    display:none;
+    opacity: 0;
+    -webkit-transition: opacity 1s linear;
+    transition:opacity 1s linear;
+}
+#formBlock{
+    -webkit-transition: margin-left 1s linear;
+    transition:margin-left 1s linear;
+}
